@@ -15,4 +15,8 @@ Pre-requisites:
 Spring Start configuration
 ![sprinStartConfiuration.png](docs/sprinStartConfiuration.png)
 
+#### Produtos API
+template:
+[https://github.com/cursodsousa/curso-spring-boot-especialista](https://github.com/cursodsousa/curso-spring-boot-especialista/tree/3bb9824c8e89f47a4928a4ed8ad3a27e710e5a7f/produtosapi)
+
 
