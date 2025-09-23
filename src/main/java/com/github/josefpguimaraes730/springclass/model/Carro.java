@@ -1,5 +1,6 @@
 package com.github.josefpguimaraes730.springclass.model;
 
+import com.github.josefpguimaraes730.springclass.model.componentes.Chave;
 import com.github.josefpguimaraes730.springclass.model.componentes.Motor;
 import com.github.josefpguimaraes730.springclass.model.enums.Montadora;
 import lombok.Getter;
@@ -25,5 +26,13 @@ public class Carro {
                 ", motor=" + motor +
                 ", montadora=" + montadora +
                 '}';
+    }
+
+    public CarroStatus darIgnicao(Chave chave) {
+        if (chave.getMontadora() != this.montadora) {
+            return new CarroStatus("Chave incompatível com o carro.");
+        }
+
+        return new CarroStatus(motor + "ligado com sucesso.");
     }
 }
