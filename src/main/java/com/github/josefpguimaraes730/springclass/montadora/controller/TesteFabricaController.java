@@ -1,12 +1,10 @@
-package com.github.josefpguimaraes730.springclass.controller;
+package com.github.josefpguimaraes730.springclass.montadora.controller;
 
-import com.github.josefpguimaraes730.springclass.model.CarroStatus;
-import com.github.josefpguimaraes730.springclass.model.annotations.Turbo;
-import com.github.josefpguimaraes730.springclass.model.componentes.Chave;
-import com.github.josefpguimaraes730.springclass.model.componentes.Motor;
-import com.github.josefpguimaraes730.springclass.model.modelos.HondaHRV;
+import com.github.josefpguimaraes730.springclass.montadora.service.CarroStatus;
+import com.github.josefpguimaraes730.springclass.montadora.service.componentes.Chave;
+import com.github.josefpguimaraes730.springclass.montadora.service.componentes.Motor;
+import com.github.josefpguimaraes730.springclass.montadora.service.modelos.HondaHRV;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

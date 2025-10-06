@@ -1,8 +1,8 @@
-package com.github.josefpguimaraes730.springclass.model;
+package com.github.josefpguimaraes730.springclass.montadora.service;
 
-import com.github.josefpguimaraes730.springclass.model.componentes.Chave;
-import com.github.josefpguimaraes730.springclass.model.componentes.Motor;
-import com.github.josefpguimaraes730.springclass.model.enums.Montadora;
+import com.github.josefpguimaraes730.springclass.montadora.service.componentes.Chave;
+import com.github.josefpguimaraes730.springclass.montadora.service.componentes.Motor;
+import com.github.josefpguimaraes730.springclass.montadora.service.enums.Montadora;
 import lombok.Getter;
 import lombok.Setter;
 

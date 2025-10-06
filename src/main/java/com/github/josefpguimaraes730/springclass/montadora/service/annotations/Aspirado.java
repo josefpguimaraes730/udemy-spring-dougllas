@@ -1,4 +1,4 @@
-package com.github.josefpguimaraes730.springclass.model.annotations;
+package com.github.josefpguimaraes730.springclass.montadora.service.annotations;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 

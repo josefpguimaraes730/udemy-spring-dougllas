@@ -1,7 +1,7 @@
-package com.github.josefpguimaraes730.springclass.model.configuration;
+package com.github.josefpguimaraes730.springclass.montadora.service.configuration;
 
-import com.github.josefpguimaraes730.springclass.model.componentes.Motor;
-import com.github.josefpguimaraes730.springclass.model.enums.TipoMotor;
+import com.github.josefpguimaraes730.springclass.montadora.service.componentes.Motor;
+import com.github.josefpguimaraes730.springclass.montadora.service.enums.TipoMotor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
