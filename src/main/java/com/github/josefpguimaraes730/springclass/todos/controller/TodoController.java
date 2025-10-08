@@ -2,6 +2,7 @@ package com.github.josefpguimaraes730.springclass.todos.controller;
 
 import com.github.josefpguimaraes730.springclass.todos.entity.TodoEntity;
 import com.github.josefpguimaraes730.springclass.todos.service.TodoService;
+import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
 
 
 @RestController
@@ -23,7 +25,11 @@ public class TodoController {
 
     @PostMapping
     public TodoEntity salvar(@RequestBody TodoEntity todo) {
-        return this.service.salvar(todo);
+        try {
+            return this.service.salvar(todo);
+        }catch (IllegalArgumentException e) {
+            throw new ResponseStatusException(HttpStatus.CONFLICT, e.getMessage());
+        }
     }
 
     @PutMapping("{id}")

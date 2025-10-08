@@ -8,22 +8,31 @@ import org.springframework.stereotype.Service;
 @Service
 public class TodoService {
 
-    public TodoRepository todoRepository;
+    private TodoRepository repository;
+    private TodoValidator validator;
+    private MailSender mailSender;
 
     //Se houver Autowired nao precisa de construtor
-    public TodoService(TodoRepository todoRepository) {
-        this.todoRepository = todoRepository;
+    public TodoService(TodoRepository repository,
+                       TodoValidator validator,
+                       MailSender mailSender) {
+        this.repository = repository;
+        this.validator = validator;
+        this.mailSender = mailSender;
     }
 
     public TodoEntity salvar(TodoEntity novoTodo){
-        return todoRepository.save(novoTodo);
+        validator.validar(novoTodo);
+        return repository.save(novoTodo);
     }
 
     public TodoEntity atualizarStatus(TodoEntity todo){
-        return todoRepository.save(todo);
+        TodoEntity todoEntity = repository.save(todo);
+        mailSender.enviar("Todo " + todo.getDescricao() + " foi atualizado para " + (todo.getConcluido() ? "" : "nao") + " concluido");
+        return todoEntity;
     }
 
     public TodoEntity buscarPorId(Integer id) {
-        return todoRepository.findById(id).orElse(null);
+        return repository.findById(id).orElse(null);
     }
 }
