@@ -2,14 +2,17 @@ package com.github.josefpguimaraes730.springclass.todos.service;
 
 import com.github.josefpguimaraes730.springclass.todos.entity.TodoEntity;
 import com.github.josefpguimaraes730.springclass.todos.repository.TodoRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class TodoValidator {
 
-    @Autowired
+    //@Autowired
     private TodoRepository repository;
+
+    public TodoValidator(TodoRepository repository) {
+        this.repository = repository;
+    }
 
     public void validar(TodoEntity todo) {
         if (existeDescricao(todo.getDescricao())) {

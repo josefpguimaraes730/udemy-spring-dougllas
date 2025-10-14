@@ -1,0 +1,6 @@
+spring.application.name=Base Spring
+
+spring.jpa.show_sql=true
+
+#false ja e o valor default
+spring.main.lazy-initialization=false

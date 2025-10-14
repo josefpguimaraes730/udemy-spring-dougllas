@@ -2,6 +2,9 @@ package com.github.josefpguimaraes730.springclass;
 
 import com.github.josefpguimaraes730.springclass.todos.entity.TodoEntity;
 import com.github.josefpguimaraes730.springclass.todos.repository.TodoRepository;
+import com.github.josefpguimaraes730.springclass.todos.service.MailSender;
+import com.github.josefpguimaraes730.springclass.todos.service.TodoService;
+import com.github.josefpguimaraes730.springclass.todos.service.TodoValidator;
 import jakarta.persistence.EntityManager;
 import org.springframework.data.jpa.repository.support.JpaEntityInformation;
 import org.springframework.data.jpa.repository.support.JpaMetamodelEntityInformation;
@@ -30,5 +33,8 @@ public class InjecaoDependencia {
         SimpleJpaRepository<TodoEntity, Integer> simpleRepo = new SimpleJpaRepository<TodoEntity, Integer>(entityInformation, entityManager);
         //Casting 'simpleRepo' to 'TodoRepository' will produce 'ClassCastException' for any non-null value
         TodoRepository repository = (TodoRepository) simpleRepo;
+        TodoValidator validator = new TodoValidator(repository);
+        MailSender mailSender = new MailSender();
+        TodoService service = new TodoService(repository, validator, mailSender);
     }
 }

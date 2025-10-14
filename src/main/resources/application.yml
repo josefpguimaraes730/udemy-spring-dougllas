@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: Base Spring
+  jpa:
+    show_sql: true
+  main:
+    lazy-initialization: false #false ja e o valor default
+
+app:
+  config:
+    variavel: vasco_da_gama
+    valor: 500
